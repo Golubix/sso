@@ -1,0 +1,32 @@
+﻿@*@using System.Web.Optimization*@
+
+@model SSO.Models.ScrAccount
+@{
+    ViewBag.Title = "Login";
+
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Translations.LoginTitle</title>
+</head>
+<body class="body">
+    <div>
+        @Html.ValidationSummary()
+    </div>
+    <form method="POST" action="@Url.Action("Login", "Account")" style="padding-top: 10px">
+        <label for="exampleInputEmail1">UserName: </label>
+        @Html.TextBoxFor(m => m.UserName, new { placeholder = "UserName", @class = "form-control", id = "UserName" })
+        <label for="exampleInputPassword1"> Password: </label>
+        @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
+        <button type="submit" id="LoginSubmit" class="btn btn-primary btn-lg btn-block">@Model.Translations.LoginButton</button>
+        @Html.Hidden("ResponseDomain", Model.ResponseDomain)
+        @Html.Hidden("ResponseRelativePath", Model.ResponseRelativePath)
+    </form>
+</body>
+</html>

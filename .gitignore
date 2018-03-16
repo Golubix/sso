@@ -1,0 +1,15 @@
+/Domain1/.vs/Domain1/v14/*.suo
+/Domain1/Domain1/bin
+/Domain1/packages/
+/Domain1/Domain1/obj/
+/Domain2/Domain2/bin
+/Domain2/packages/
+/SSO/SSO/bin
+/SSO/packages/
+/Domain2/Domain2/obj/
+/SSO/SSO/obj/
+/SSO/SSOHandlers/bin/Debug
+/SSO/SSOHandlers/obj/Debug
+/SSO/SSOHandlers/obj/Release
+/SSO/Common/bin/Debug
+/SSO/Common/obj/Debug

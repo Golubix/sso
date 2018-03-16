@@ -1,0 +1,63 @@
+﻿﻿@model SSO.Models.ScrLogout
+@{
+    ViewBag.Title = "Signout";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Out</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body class="body-log">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-8" style="text-align:center;top:-10px">
+                <img src="../../Content/Images/Pics/sso2-01.png" alt="sso2" width="150" class="img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row hidden-xs" style="margin-top:100px">
+
+            <div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3"> 
+            <div class="well"><h4>You have successfully logged out from</h4>
+                <h5><a href="http://@Model.KeyResponseDomainSite">@Model.KeyResponseDomainSite</a></h5></div></div>
+            <div class="col-lg-1 col-md-1 col-sm-1" style="text-align:center;padding:0px;">
+                <div class="vertical-line"> </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3" style="text-align:center; padding-left:0px">
+                @*<img src="../../Content/Images/Pics/dca.png" alt="dca" style="max-height:160px;" class="img">
+                    <img src="../../Content/Images/Pics/logo.png" alt="belfius" class="img"> </div>*@
+                @if (Model.DomainNames.Count() > 0)
+                {
+                    <h5>You have logged out from following domains too:</h5>
+                    @*<div class="col-sm-5" style="padding-right:0px">
+
+                        <label for="logoutDomainsMsg">You have logged out from following domains too:</label>
+                    </div>*@
+                }
+
+                @foreach (var domain in Model.DomainNames)
+                {
+                    string protocol = this.Request.IsSecureConnection ? "https" : "http";
+                    <img src="@string.Format("{0}://{1}/auth.logout",protocol, domain)" class="img" /> <h5>@domain</h5>
+                }
+
+            </div>
+
+            <div class="row hidden-lg hidden-md hidden-sm" style="margin-top:40px">
+                <div class="col-xs-10 col-xs-offset-1"></div>
+                <div class="col-xs-10 col-xs-offset-1">
+                    <hr class="hr" />
+                </div>
+                <div class="col-xs-10 col-xs-offset-1" style="text-align:center">
+                    <img src="../../Content/Images/Pics/dca.png" alt="dca" style="max-width:80px;" class="img-xs">
+                    <img src="../../Content/Images/Pics/logo.png" alt="belfius" class="img-xs">
+                </div>
+            </div>
+        </div>
+</body>

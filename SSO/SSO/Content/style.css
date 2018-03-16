@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+@media (min-width: 768px) {
+	
+	body {
+	background-image: url(IMG/SSO%20LOG%20OUT-01.jpg);
+	background-size: cover;
+	background-repeat:no-repeat;
+	margin:0px;
+}
+}
+@media (max-width: 768px) {
+	
+	body {
+	background-image: url(IMG/SSO%20LOG%20OUT-01.jpg);
+	background-size: 200%;
+	background-repeat:no-repeat;
+	margin:0px;
+}
+}
+div.vertical-line{
+  width: 8px; 
+  background-color: #569BD5;
+  height: 250px; 
+}
+.img {
+	margin-top:15px;
+	margin-bottom:5px; 
+	display:block;}
+.img {
+	margin-top:15px;
+	margin-bottom:5px; 
+	display:inline-block;}
+
+.hr {
+	height:8px;
+	background-color: #569BD5;
+  	width: 100%px; 
+}
